@@ -51,7 +51,8 @@ form .form-input {
 }
 .form-input #todo-title,
 .form-input #todo-desc,
-.form-input #todo-date {
+.form-input #todo-date,
+#todo-project {
   border-radius: 5px;
   border: none;
   min-height: 30px;
@@ -101,3 +102,7 @@ form .form-input {
 
 #status{
     background-color: rgb(80, 253, 103);}
+
+.project-btn {
+  margin-top: 10px;
+}
