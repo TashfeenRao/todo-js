@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(43, 41, 41);
+  color: white;
+}
+
+header {
+  max-height: 150px;
+  background-color: rgb(26, 25, 25);
+  margin-bottom: 20px;
+}
+header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  min-height: 600px;
+  background-color: rgb(26, 25, 25);
+}
