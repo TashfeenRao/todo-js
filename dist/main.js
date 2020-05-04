@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/dom.js":
+/*!********************!*\
+  !*** ./src/dom.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* eslint-disable no-unused-vars */\r\nconst dom = (() => {\r\n  function displayTodo() {\r\n    \r\n  }\r\n\r\n  function createTodo() {\r\n    const title = document.getElementById('todo-title').values;\r\n    const desc  = document.getElementById('todo-desc').values;\r\n    const date  = document.getElementById('todo-date').values;\r\n\r\n    \r\n\r\n  }\r\n\r\n  function createProject() {\r\n  }\r\n\r\n  function displaydotoProject() {\r\n\r\n  }\r\n\r\n  function displaySingleTodo() {\r\n\r\n  }\r\n  return {\r\n    displayTodo, displaydotoProject, displaySingleTodo, createProject, createTodo\r\n  };\r\n})();\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (dom);\n\n//# sourceURL=webpack:///./src/dom.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -94,7 +106,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n/* eslint-disable no-unused-vars */\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* eslint-disable no-unused-vars */\r\n\r\n\r\n\r\n_dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].displayTodo();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
