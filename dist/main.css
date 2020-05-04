@@ -28,7 +28,7 @@ nav ul {
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  min-height: 600px;
+  min-height: 470px;
   background-color: rgb(26, 25, 25);
 }
 
@@ -51,8 +51,7 @@ form .form-input {
 }
 .form-input #todo-title,
 .form-input #todo-desc,
-.form-input #todo-date,
-#todo-project {
+.form-input #todo-date {
   border-radius: 5px;
   border: none;
   min-height: 30px;
@@ -72,37 +71,51 @@ form .form-input {
 }
 
 .list-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.list-container #todo-item{
-    border: 1px solid rgb(82, 82, 82);
-    list-style: none;
-    min-width: 300px;
-    margin-right: 45px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    max-height: 50px;
-    line-height: 10px;
-    font-size: 12px;
-
+.list-container #todo-item {
+  border: 1px solid rgb(82, 82, 82);
+  list-style: none;
+  min-width: 300px;
+  margin-right: 45px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  max-height: 50px;
+  line-height: 10px;
+  font-size: 12px;
 }
 
 #todo-item h2 {
-    font-size: 17px;
+  font-size: 17px;
 }
 
-#project-name , #status, #date{
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    padding: 5px 5px 5px 5px;
+#project-name,
+#status,
+#date,.mini-data-date, #delete, #edit {
+
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
 }
 
-#status{
-    background-color: rgb(80, 253, 103);}
-
-.project-btn {
-  margin-top: 10px;
+#status {
+  background-color: rgb(80, 253, 103);
 }
+
+.single-item-container {
+  background-color: rgb(26, 25, 25);
+  margin: auto;
+  justify-content: center;
+  max-width: 1200px;
+  min-height: 100px;
+}
+.single-item-container .single-item {
+  text-align: center;
+  border: 1px solid rgb(82, 82, 82);
+  padding: 0px 70px 0px 70px;
+  line-height: 10px;
+}
+
