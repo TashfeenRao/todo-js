@@ -19,6 +19,12 @@ class Todo {
   setProject(project) {
     this.projectId = project.id;
   }
+
+  projects() {
+    return todoList.projects.filter(
+      (project) => project.id === this.projectId,
+    );
+  }
 }
 
 export default Todo;
