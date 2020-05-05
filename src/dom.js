@@ -3,6 +3,7 @@
 import Todo from './todo';
 import Project from './project';
 import todoList from './todoList';
+import action from './action';
 
 const dom = (() => {
   function displayTodo() {
@@ -13,23 +14,23 @@ const dom = (() => {
     todo.forEach(fetch);
     function fetch(todo) {
       li.innerHTML = `
-    <h2>${todo.title}</h2>
+    <h2 dataAtribute ='${todo.id}'>${todo.title}</h2>
     <strong id="project-name">${todo.projects()[0].name}</strong>
     <strong id="status" style="background-color: rgb(245, 106, 106);"
       >${displayStatus(todo)}</strong
     >
     <strong id="date">${todo.date}</strong>`;
       listContainer.appendChild(li);
+      todo.addEventListener('click', displaySingleTodo(todo));
     }
   }
 
   function displayStatus(todo) {
-    if(todo.status === true) {
+    if (todo.status === true) {
       return 'Completed';
     }
-    else {
-      return 'In progress';
-    }
+
+    return 'Not completed';
   }
 
   function displayProject() {
@@ -52,8 +53,6 @@ const dom = (() => {
   function createProject(name) {
     const project = new Project(name);
     displayProject();
-    console.log(project);
-    console.log(todoList.projects);
   }
 
   function clearDom() {
@@ -85,7 +84,18 @@ const dom = (() => {
     });
   }
 
-  function displaySingleTodo() {}
+  function displaySingleTodo(todo) {
+    // const todoContainer = document.querySelector('.single-item');
+    const title = document.getElementById('single-title');
+    const desc = document.getElementById('desc');
+    const date = document.querySelector('.mini-data-date');
+    const status = document.getElementById('single-status');
+    title.innerHTML = todo.title;
+    desc.innerHTML = todo.desc;
+    date.innerHTML = todo.date;
+    status.innerHTML = displayStatus(todo);
+  }
+
   return {
     displayTodo,
     displaySingleTodo,

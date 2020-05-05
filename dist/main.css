@@ -125,4 +125,7 @@ form .form-input {
   padding: 0px 70px 0px 70px;
   line-height: 10px;
 }
+select {
+  color: white;
+}
 
