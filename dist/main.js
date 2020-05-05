@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* eslint-disable no-unused-vars */\r\nconst dom = (() => {\r\n  function displayTodo() {\r\n    \r\n  }\r\n\r\n  function createTodo() {\r\n    const title = document.getElementById('todo-title').values;\r\n    const desc  = document.getElementById('todo-desc').values;\r\n    const date  = document.getElementById('todo-date').values;\r\n\r\n    \r\n\r\n  }\r\n\r\n  function createProject() {\r\n  }\r\n\r\n  function displaydotoProject() {\r\n\r\n  }\r\n\r\n  function displaySingleTodo() {\r\n\r\n  }\r\n  return {\r\n    displayTodo, displaydotoProject, displaySingleTodo, createProject, createTodo\r\n  };\r\n})();\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (dom);\n\n//# sourceURL=webpack:///./src/dom.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo */ \"./src/todo.js\");\n/* eslint-disable no-unused-vars */\n\n\nconst dom = (() => {\n  function displayTodo() {}\n\n  function createTodo() {\n    const title = document.getElementById('todo-title').values;\n    const desc = document.getElementById('todo-desc').values;\n    const date = document.getElementById('todo-date').values;\n    const todo = new _todo__WEBPACK_IMPORTED_MODULE_0__[\"default\"](title, desc, date);\n    console.log(todo);\n  }\n\n  function createProject() {}\n\n  function displaydotoProject() {}\n\n  function displaySingleTodo() {}\n  return {\n    displayTodo,\n    displaydotoProject,\n    displaySingleTodo,\n    createProject,\n    createTodo,\n  };\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (dom);\n\n\n//# sourceURL=webpack:///./src/dom.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* eslint-disable no-unused-v
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* eslint-disable no-unused-vars */\r\n\r\n\r\n\r\n_dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].displayTodo();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* eslint-disable no-unused-vars */\n\n\n\n_dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].displayTodo();\n\nconst form = document.getElementById('form-todo');\nform.addEventListener('submit', (prev) => {\n  prev.preventDefault();\n  _dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].createTodo();\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -118,6 +118,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/style.css?");
+
+/***/ }),
+
+/***/ "./src/todo.js":
+/*!*********************!*\
+  !*** ./src/todo.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _todoList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todoList */ \"./src/todoList.js\");\n/* eslint-disable no-plusplus */\n\n\nlet todoId = 0;\n\nclass Todo {\n  constructor(title, date, desc, project) {\n    this.id = ++todoId;\n    this.title = title;\n    this.date = date;\n    this.desc = desc;\n    this.status = false;\n    if (project) {\n      this.setProject(project);\n    }\n    _todoList__WEBPACK_IMPORTED_MODULE_0__[\"default\"].todos.push(this);\n  }\n\n  setProject(project) {\n    this.projectId = project.id;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Todo);\n\n\n//# sourceURL=webpack:///./src/todo.js?");
+
+/***/ }),
+
+/***/ "./src/todoList.js":
+/*!*************************!*\
+  !*** ./src/todoList.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst todoList = { projects: [], todos: [] };\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (todoList);\n\n//# sourceURL=webpack:///./src/todoList.js?");
 
 /***/ })
 

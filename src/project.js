@@ -1,5 +1,5 @@
-import todoList from './todoList';
 /* eslint-disable no-plusplus */
+import todoList from './todoList';
 
 let projecId = 0;
 
