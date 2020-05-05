@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
 import Todo from './todo';
 import Project from './project';
@@ -9,21 +10,21 @@ const dom = (() => {
     const todo = todoList.todos;
     const li = document.createElement('li')
     li.id = 'todo-item';
-    todo.forEach(Fetch);
-    function Fetch(todo) {
+    todo.forEach(fetch);
+    function fetch(todo) {
       li.innerHTML = `
     <h2>${todo.title}</h2>
     <strong id="project-name">Project name</strong>
     <strong id="status" style="background-color: rgb(245, 106, 106);"
       >in progress</strong
     >
-    <strong id="date">date</strong>`;
+    <strong id="date">${todo.date}</strong>`;
       listContainer.appendChild(li);
     }
   }
 
-  function createTodo(title, desc, date) {
-    const todo = new Todo(title, desc, date);
+  function createTodo(title, date, desc) {
+    const todo = new Todo(title, date, desc);
     displayTodo();
     console.log(todo);
   }
@@ -49,7 +50,7 @@ const dom = (() => {
       const title = document.getElementById('todo-title').value;
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
-      createTodo(title, desc, date);
+      createTodo(title, date, desc);
       clearDom();
     });
 
