@@ -98,6 +98,7 @@ form .form-input {
 
 #project-name,
 #status,
+#single-status,
 #date,
 .mini-data-date,
 #delete,
@@ -108,7 +109,7 @@ form .form-input {
   padding: 5px 5px 5px 5px;
 }
 
-#status {
+#status, #single-status {
   background-color: rgb(80, 253, 103);
 }
 
