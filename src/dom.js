@@ -4,12 +4,20 @@ import Todo from './todo';
 const dom = (() => {
   function displayTodo() {}
 
-  function createTodo() {
-    const title = document.getElementById('todo-title').values;
-    const desc = document.getElementById('todo-desc').values;
-    const date = document.getElementById('todo-date').values;
+  function createTodo(title, desc, date) {
     const todo = new Todo(title, desc, date);
-    console.log(todo);
+  }
+
+  function listentToDom() {
+    const form = document.getElementById('form-todo');
+
+    form.addEventListener('submit', (prev) => {
+      prev.preventDefault();
+      const title = document.getElementById('todo-title').value;
+      const desc = document.getElementById('todo-desc').value;
+      const date = document.getElementById('todo-date').value;
+      createTodo(title, desc, date);
+    });
   }
 
   function createProject() {}
@@ -23,6 +31,7 @@ const dom = (() => {
     displaySingleTodo,
     createProject,
     createTodo,
+    listentToDom,
   };
 })();
 
