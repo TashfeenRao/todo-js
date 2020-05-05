@@ -24,14 +24,14 @@ const dom = (() => {
   }
 
   function displayProject() {
-    let projDisplay = document.querySelector('.project');
-    projDisplay.innerHTML = '';
+    const listproject = document.querySelector('.project');
+    listproject.innerHTML = '';
     const proj = todoList.projects;
     proj.forEach(getProjects);
     function getProjects(p) {
       const option = document.createElement('option');
-      option.innerHTML = `<option>${p.name}</option>`;
-      projDisplay.appendChild(option);
+      option.innerHTML = `<option dataAtribute ="${p.id}">${p.name}</option>`;
+      listproject.appendChild(option);
     }
   }
 
@@ -63,10 +63,10 @@ const dom = (() => {
       const title = document.getElementById('todo-title').value;
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
-      createTodo(title, date, desc);
+      const project = document.querySelector('.project').options.selectedIndex;
+      createTodo(title, date, desc, todoList.projects[project]);
       clearDom();
     });
-
 
     formProject.addEventListener('submit', (p) => {
       p.preventDefault();
