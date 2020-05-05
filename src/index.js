@@ -3,5 +3,4 @@ import css from './style.css';
 import dom from './dom';
 
 dom.displayTodo();
-
 dom.listentToDom();

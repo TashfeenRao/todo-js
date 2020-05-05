@@ -3,6 +3,7 @@ import Todo from './todo';
 import Project from './project';
 
 const dom = (() => {
+
   function displayTodo() {}
 
   function createTodo(title, desc, date) {
@@ -44,13 +45,9 @@ const dom = (() => {
     });
   }
 
-
-  function displaydotoProject() {}
-
   function displaySingleTodo() {}
   return {
     displayTodo,
-    displaydotoProject,
     displaySingleTodo,
     createProject,
     createTodo,
