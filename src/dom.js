@@ -8,13 +8,13 @@ const dom = (() => {
   function displayTodo() {
     const listContainer = document.querySelector('.list-container');
     const todo = todoList.todos;
-    const li = document.createElement('li')
+    const li = document.createElement('li');
     li.id = 'todo-item';
     todo.forEach(fetch);
     function fetch(todo) {
       li.innerHTML = `
     <h2>${todo.title}</h2>
-    <strong id="project-name">Project name</strong>
+    <strong id="project-name">${todo.projects()[0].name}</strong>
     <strong id="status" style="background-color: rgb(245, 106, 106);"
       >in progress</strong
     >
@@ -23,8 +23,8 @@ const dom = (() => {
     }
   }
 
-  function createTodo(title, date, desc) {
-    const todo = new Todo(title, date, desc);
+  function createTodo(title, date, desc, project) {
+    const todo = new Todo(title, date, desc, project);
     displayTodo();
     console.log(todo);
   }
