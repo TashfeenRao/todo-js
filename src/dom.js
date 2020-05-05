@@ -16,10 +16,19 @@ const dom = (() => {
     <h2>${todo.title}</h2>
     <strong id="project-name">${todo.projects()[0].name}</strong>
     <strong id="status" style="background-color: rgb(245, 106, 106);"
-      >in progress</strong
+      >${displayStatus(todo)}</strong
     >
     <strong id="date">${todo.date}</strong>`;
       listContainer.appendChild(li);
+    }
+  }
+
+  function displayStatus(todo) {
+    if(todo.status === true) {
+      return 'Completed';
+    }
+    else {
+      return 'In progress';
     }
   }
 
