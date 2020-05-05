@@ -23,15 +23,28 @@ const dom = (() => {
     }
   }
 
+  function displayProject() {
+    let projDisplay = document.querySelector('.project');
+    projDisplay.innerHTML = '';
+    const proj = todoList.projects;
+    proj.forEach(getProjects);
+    function getProjects(p) {
+      const option = document.createElement('option');
+      option.innerHTML = `<option>${p.name}</option>`;
+      projDisplay.appendChild(option);
+    }
+  }
+
   function createTodo(title, date, desc, project) {
     const todo = new Todo(title, date, desc, project);
     displayTodo();
-    console.log(todo);
   }
 
   function createProject(name) {
     const project = new Project(name);
+    displayProject();
     console.log(project);
+    console.log(todoList.projects);
   }
 
   function clearDom() {
@@ -70,6 +83,7 @@ const dom = (() => {
     createProject,
     createTodo,
     listentToDom,
+    displayProject,
   };
 })();
 

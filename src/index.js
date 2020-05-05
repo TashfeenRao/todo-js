@@ -4,5 +4,6 @@ import dom from './dom';
 import todoList from './todoList'
 
 dom.displayTodo();
+dom.displayProject();
 dom.listentToDom();
 dom.createTodo('hi', '02/20/20', 'im a desct', todoList.projects[0]);
