@@ -1,13 +1,30 @@
 /* eslint-disable no-unused-vars */
 import Todo from './todo';
 import Project from './project';
+import todoList from './todoList';
 
 const dom = (() => {
-
-  function displayTodo() {}
+  function displayTodo() {
+    const listContainer = document.querySelector('.list-container');
+    const todo = todoList.todos;
+    const li = document.createElement('li')
+    li.id = 'todo-item';
+    todo.forEach(Fetch);
+    function Fetch(todo) {
+      li.innerHTML = `
+    <h2>${todo.title}</h2>
+    <strong id="project-name">Project name</strong>
+    <strong id="status" style="background-color: rgb(245, 106, 106);"
+      >in progress</strong
+    >
+    <strong id="date">date</strong>`;
+      listContainer.appendChild(li);
+    }
+  }
 
   function createTodo(title, desc, date) {
     const todo = new Todo(title, desc, date);
+    displayTodo();
     console.log(todo);
   }
 
