@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
 import css from './style.css';
-import dom from './dom';
+import domListener from './domListener';
 
-dom.listentToDom();
+domListener.ListentForNewTodo();

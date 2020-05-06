@@ -46,10 +46,11 @@ nav ul {
   min-height: 450px;
 }
 
-.toto-form h4,.project-form h4, .todo-list h4{
+.toto-form h4,
+.project-form h4,
+.todo-list h4 {
   text-align: center;
 }
-
 
 form .form-input {
   display: flex;
@@ -82,8 +83,8 @@ form .form-input {
   display: flex;
   flex-direction: column;
 }
-#new-todo-btn{
-  background-color: #304ffe ;
+#new-todo-btn {
+  background-color: #304ffe;
   margin: auto;
   max-width: 100px;
   padding: 5px 5px 5px 5px;
@@ -137,7 +138,7 @@ form .form-input {
   line-height: 10px;
 }
 
-.projects-container{
+.projects-container {
   max-width: 300px;
   width: 80%;
   margin: auto;

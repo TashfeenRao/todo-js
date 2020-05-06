@@ -1,12 +1,11 @@
 /* eslint-disable radix */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
-import Todo from './todo';
-import Project from './project';
 import todoList from './todoList';
 import action from './action';
+import formRenderer from './formRenderer';
 
-const dom = (() => {
+const domListener = (() => {
   function displayTodo() {
     const listContainer = document.querySelector('.list-container');
     const todo = todoList.todos;
@@ -24,8 +23,24 @@ const dom = (() => {
     <strong id="date">${todo.date}</strong>`;
       listContainer.appendChild(li);
     }
-    dom.displaySingleTodo();
+    displaySingleTodo();
   }
+
+  const ListentForNewTodo = () => {
+    const newTbn = document.getElementById('new-todo-btn');
+    newTbn.addEventListener('click', formRenderer.renderNewTodo);
+    const formTodo = document.getElementById('form-todo');
+    formTodo.addEventListener('submit', (n) => {
+      n.preventDefault();
+      const title = document.getElementById('todo-title').value;
+      const desc = document.getElementById('todo-desc').value;
+      const date = document.getElementById('todo-date').value;
+      const project = document.querySelector('.project').options.selectedIndex;
+      action.createTodo(title, date, desc, todoList.projects[project]);
+      displayTodo();
+      clearDom();
+    });
+  };
 
   const displayAllProject = () => {
     const projectElement = document.querySelector('.projects-container');
@@ -58,19 +73,7 @@ const dom = (() => {
   }
 
   function listentToDom() {
-    const formTodo = document.getElementById('form-todo');
     const formProject = document.getElementById('form-project');
-
-    formTodo.addEventListener('submit', (n) => {
-      n.preventDefault();
-      const title = document.getElementById('todo-title').value;
-      const desc = document.getElementById('todo-desc').value;
-      const date = document.getElementById('todo-date').value;
-      const project = document.querySelector('.project').options.selectedIndex;
-      action.createTodo(title, date, desc, todoList.projects[project]);
-      displayTodo();
-      clearDom();
-    });
 
     formProject.addEventListener('submit', (p) => {
       p.preventDefault();
@@ -156,7 +159,8 @@ const dom = (() => {
     displayProjectDropDown,
     displayAllProject,
     listenForEdit,
+    ListentForNewTodo,
   };
 })();
 
-export default dom;
+export default domListener;
