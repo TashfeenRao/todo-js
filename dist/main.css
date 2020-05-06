@@ -82,6 +82,14 @@ form .form-input {
   display: flex;
   flex-direction: column;
 }
+#new-todo-btn{
+  background-color: #304ffe ;
+  margin: auto;
+  max-width: 100px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  text-align: center;
+}
 
 .list-container #todo-item {
   border: 1px solid rgb(82, 82, 82);
