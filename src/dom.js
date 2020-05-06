@@ -104,8 +104,10 @@ const dom = (() => {
         desc.innerHTML = todoList.todos[id].desc;
         date.innerHTML = todoList.todos[id].date;
         status.innerHTML = action.displayStatus(todoList.todos[id]);
+        action.editTodo(todoList.todos[id]);
       });
     });
+    
   }
 
   return {
