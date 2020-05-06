@@ -1,4 +1,4 @@
-
+/* eslint-disable import/no-cycle */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
 import todoList from './todoList';
@@ -7,7 +7,6 @@ import formRenderer from './formRenderer';
 import displayer from './displayer';
 
 const domListener = (() => {
-  
   const listenForListProject = () => {
     const listproject = document.getElementById('project-drop');
     console.log(listproject);
@@ -30,17 +29,6 @@ const domListener = (() => {
       displayer.displayAllTodos();
       clearDom();
     });
-  };
-
-  const displayAllProject = () => {
-    const projectElement = document.querySelector('.projects-container');
-    projectElement.innerHTML = '';
-    todoList.projects.forEach(lisproject);
-    function lisproject(proj) {
-      const p = document.createElement('p');
-      p.innerHTML = `${proj.name}`;
-      projectElement.appendChild(p);
-    }
   };
 
   function displayProjectDropDown() {
@@ -68,7 +56,7 @@ const domListener = (() => {
       p.preventDefault();
       const name = document.getElementById('project-name').value;
       action.createProject(name);
-      displayAllProject();
+      displayer.displayAllProjects();
       clearDom();
     });
   }
@@ -90,7 +78,6 @@ const domListener = (() => {
   return {
     listentForNewProject,
     displayProjectDropDown,
-    displayAllProject,
     listenForEdit,
     ListentForNewTodo,
   };

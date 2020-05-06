@@ -43,7 +43,18 @@ const displayer = (() => {
     });
   };
 
-  return { displayAllTodos, displaySingleTodo };
+  const displayAllProjects = (todoList) => {
+    const projectElement = document.querySelector('.projects-container');
+    projectElement.innerHTML = '';
+    todoList.projects.forEach(lisproject);
+    function lisproject(proj) {
+      const p = document.createElement('p');
+      p.innerHTML = `${proj.name}`;
+      projectElement.appendChild(p);
+    }
+  };
+
+  return { displayAllTodos, displaySingleTodo, displayAllProjects };
 })();
 
 export default displayer;
