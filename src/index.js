@@ -3,3 +3,4 @@ import css from './style.css';
 import domListener from './domListener';
 
 domListener.ListentForNewTodo();
+domListener.listentForNewProject();
