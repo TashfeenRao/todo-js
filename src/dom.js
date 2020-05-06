@@ -50,12 +50,6 @@ const dom = (() => {
     }
   }
 
-  function createProject(name) {
-    const project = new Project(name);
-    displayProjectDropDown();
-    displayAllProject();
-  }
-
   function clearDom() {
     document.getElementById('todo-title').value = '';
     document.getElementById('todo-desc').value = '';
@@ -81,7 +75,9 @@ const dom = (() => {
     formProject.addEventListener('submit', (p) => {
       p.preventDefault();
       const name = document.getElementById('project-name').value;
-      createProject(name);
+      action.createProject(name);
+      displayProjectDropDown();
+      displayAllProject();
       clearDom();
     });
   }
@@ -156,7 +152,6 @@ const dom = (() => {
   return {
     displayTodo,
     displaySingleTodo,
-    createProject,
     listentToDom,
     displayProjectDropDown,
     displayAllProject,

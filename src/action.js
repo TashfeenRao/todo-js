@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Todo from './todo';
+import Project from './project';
 
 const action = (() => {
   const editStatus = (todo) => {
@@ -27,8 +28,16 @@ const action = (() => {
     const todo = new Todo(title, date, desc, project);
   };
 
+  const createProject = (name) => {
+    const project = new Project(name);
+  };
+
   return {
-    editStatus, displayStatus, updateTodo, createTodo,
+    editStatus,
+    displayStatus,
+    updateTodo,
+    createTodo,
+    createProject,
   };
 })();
 
