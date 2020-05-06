@@ -50,11 +50,6 @@ const dom = (() => {
     }
   }
 
-  function createTodo(title, date, desc, project) {
-    const todo = new Todo(title, date, desc, project);
-    displayTodo();
-  }
-
   function createProject(name) {
     const project = new Project(name);
     displayProjectDropDown();
@@ -78,7 +73,8 @@ const dom = (() => {
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
-      createTodo(title, date, desc, todoList.projects[project]);
+      action.createTodo(title, date, desc, todoList.projects[project]);
+      displayTodo();
       clearDom();
     });
 
@@ -161,7 +157,6 @@ const dom = (() => {
     displayTodo,
     displaySingleTodo,
     createProject,
-    createTodo,
     listentToDom,
     displayProjectDropDown,
     displayAllProject,

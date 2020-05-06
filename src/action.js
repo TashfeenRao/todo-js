@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+import Todo from './todo';
+
 const action = (() => {
   const editStatus = (todo) => {
     if (todo.status === false) {
@@ -17,12 +20,16 @@ const action = (() => {
     if (todo.status === true) {
       return 'Completed';
     }
-
     return 'Not completed';
   };
 
+  const createTodo = (title, date, desc, project) => {
+    const todo = new Todo(title, date, desc, project);
+  };
 
-  return { editStatus, displayStatus, updateTodo };
+  return {
+    editStatus, displayStatus, updateTodo, createTodo,
+  };
 })();
 
 export default action;
