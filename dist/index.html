@@ -31,15 +31,13 @@
     <div class="single-item-container">
       <div class="single-item">
         <h3 id="single-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Click on a todo to expand it here!
         </h3>
         <p id="desc">
-          Description: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Illo iste saepe veritatis. Commodi, soluta dignissimos
         </p>
         <div class="mini-details" style="margin-bottom: 20px;">
-          <strong class="mini-data-date">23/04/2019</strong>
-          <strong id="single-status">Completed</strong>
+          <strong class="mini-data-date"></strong>
+          <strong id="single-status"></strong>
           <strong id="delete"><i class="far fa-trash-alt"></i></strong>
           <strong id="edit"><i class="far fa-edit"></i></strong>
         </div>
@@ -48,6 +46,7 @@
     <div class="container">
       <div class="toto-form" id="form-todo">
         <form>
+          <h4> NEW TODO</h4>
           <div class="form-input">
             <label for="todo-title">Title</label>
             <input type="text" id="todo-title" value="" required />
@@ -82,6 +81,8 @@
 
       <div class="project-form" id="form-project">
         <form>
+          <h4>NEW PROJECT</h4>
+
           <div class="form-input">
             <label for="todo-projec-tile">Project Name</label>
             <input type="text" id="project-name" />
@@ -90,9 +91,15 @@
             <button id="saver" class="project-btn" type="submit">Save</button>
           </div>
         </form>
+
+        <h4>ALL PROJECTS</h4>
+        <div class="projects-container">
+        </div>
+
       </div>
 
       <div class="todo-list">
+        <h4>ALL TODOS</h4>
         <ul class="list-container">
         </ul>
       </div>

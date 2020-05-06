@@ -38,15 +38,18 @@ nav ul {
 .toto-form,
 .todo-list,
 .project-form {
-  margin-top: 30px;
   border: 1px solid rgb(82, 82, 82);
-  height: 400px;
+  height: 450px;
   margin-left: auto;
   margin-right: auto;
   min-width: 300px;
-  min-height: 400px;
-  padding-top: 20px;
+  min-height: 450px;
 }
+
+.toto-form h4,.project-form h4, .todo-list h4{
+  text-align: center;
+}
+
 
 form .form-input {
   display: flex;
@@ -98,7 +101,6 @@ form .form-input {
 
 #project-name,
 #status,
-#single-status,
 #date,
 .mini-data-date,
 #delete,
@@ -109,7 +111,7 @@ form .form-input {
   padding: 5px 5px 5px 5px;
 }
 
-#status, #single-status {
+#status {
   background-color: rgb(80, 253, 103);
 }
 
@@ -126,7 +128,22 @@ form .form-input {
   padding: 0px 70px 0px 70px;
   line-height: 10px;
 }
-select {
-  color: white;
+
+.projects-container{
+  max-width: 300px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projects-container p {
+  background-color: #304ffe;
+  margin-left: 5px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
 }
 

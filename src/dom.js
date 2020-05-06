@@ -19,7 +19,7 @@ const dom = (() => {
     <h2>${todo.title}</h2>
     <strong id="project-name">${todo.projects()[0].name}</strong>
     <strong id="status" style="background-color: rgb(245, 106, 106);"
-      >${displayStatus(todo)}</strong
+      >${action.displayStatus(todo)}</strong
     >
     <strong id="date">${todo.date}</strong>`;
       listContainer.appendChild(li);
@@ -27,15 +27,18 @@ const dom = (() => {
     dom.displaySingleTodo();
   }
 
-  function displayStatus(todo) {
-    if (todo.status === true) {
-      return 'Completed';
+  const displayAllProject = () => {
+    const projectElement = document.querySelector('.projects-container');
+    projectElement.innerHTML = '';
+    todoList.projects.forEach(lisproject);
+    function lisproject(proj) {
+      const p = document.createElement('p');
+      p.innerHTML = `${proj.name}`;
+      projectElement.appendChild(p);
     }
+  };
 
-    return 'Not completed';
-  }
-
-  function displayProject() {
+  function displayProjectDropDown() {
     const listproject = document.querySelector('.project');
     listproject.innerHTML = '';
     const proj = todoList.projects;
@@ -54,7 +57,8 @@ const dom = (() => {
 
   function createProject(name) {
     const project = new Project(name);
-    displayProject();
+    displayProjectDropDown();
+    displayAllProject();
   }
 
   function clearDom() {
@@ -99,14 +103,9 @@ const dom = (() => {
         title.innerHTML = todoList.todos[id].title;
         desc.innerHTML = todoList.todos[id].desc;
         date.innerHTML = todoList.todos[id].date;
-        status.innerHTML = displayStatus(todoList.todos[id]);
+        status.innerHTML = action.displayStatus(todoList.todos[id]);
       });
     });
-    //
-    //  = todo.title;
-    // desc.innerHTML = todo.desc;
-    // date.innerHTML = todo.date;
-    // status.innerHTML = displayStatus();
   }
 
   return {
@@ -115,7 +114,8 @@ const dom = (() => {
     createProject,
     createTodo,
     listentToDom,
-    displayProject,
+    displayProjectDropDown,
+    displayAllProject,
   };
 })();
 

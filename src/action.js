@@ -7,7 +7,14 @@ const action = (() => {
     }
   };
 
-  return { editStatus };
+  const displayStatus = (todo) => {
+    if (todo.status === true) {
+      return 'Completed';
+    }
+
+    return 'Not completed';
+  };
+  return { editStatus, displayStatus };
 })();
 
 export default action;
