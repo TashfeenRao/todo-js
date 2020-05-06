@@ -104,11 +104,58 @@ const dom = (() => {
         desc.innerHTML = todoList.todos[id].desc;
         date.innerHTML = todoList.todos[id].date;
         status.innerHTML = action.displayStatus(todoList.todos[id]);
-        action.editTodo(todoList.todos[id]);
+        editTodo(todoList.todos[id]);
       });
     });
-    
   }
+
+  const editTodo = (todo) => {
+    const editBtn = document.getElementById('edit');
+    editBtn.addEventListener('click', () => {
+      const todoForm = document.getElementById('form-todo');
+      todoForm.innerHTML = '';
+      const form = document.createElement('form');
+      form.innerHTML = `  <h4> Edit TODO</h4>
+      <div class="form-input edit-form">
+        <label for="todo-title">Title</label>
+        <input type="text" id="todo-title" value="${todo.title}" required />
+      </div>
+
+      <div class="form-input">
+        <label for="todo-desc">Description</label>
+        <input type="text-area" id="todo-desc" value="${todo.desc}" required />
+      </div>
+
+      <div class="form-input">
+        <label for="completed">Date</label>
+        <input type="date" id="todo-date" value="${todo.date}" required/>
+      </div>
+
+      <div class="form-input">
+        <label for="completed">Completed?</label>
+        <input type="checkbox" id="todo-status" />
+      </div>
+      <div class="form-input">
+        <button id="editbtn" class="todo-btn" type="submit">Edit</button>
+      </div>`;
+      todoForm.appendChild(form);
+      listenForEdit(todo.id);
+    });
+  };
+
+  const listenForEdit = (todo) => {
+    const form = document.querySelector('.edit-form');
+    form.addEventListener('submit', (n) => {
+      n.preventDefault();
+      const title = document.getElementById('todo-title').value;
+      const desc = document.getElementById('todo-desc').value;
+      const date = document.getElementById('todo-date').value;
+      const project = document.querySelector('.project').options.selectedIndex;
+      action.updateTodo(todo, title, date, desc);
+      displayTodo();
+      clearDom();
+    });
+  };
 
   return {
     displayTodo,
@@ -118,6 +165,7 @@ const dom = (() => {
     listentToDom,
     displayProjectDropDown,
     displayAllProject,
+    listenForEdit,
   };
 })();
 
