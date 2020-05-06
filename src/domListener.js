@@ -5,6 +5,7 @@ import todoList from './todoList';
 import action from './action';
 import formRenderer from './formRenderer';
 import displayer from './displayer';
+import utils from './utils';
 
 const domListener = (() => {
   const listenForListProject = () => {
@@ -27,7 +28,7 @@ const domListener = (() => {
       const project = document.querySelector('.project').options.selectedIndex;
       action.createTodo(title, date, desc, todoList.projects[project]);
       displayer.displayAllTodos();
-      clearDom();
+      utils.clearTodoForm();
     });
   };
 
@@ -43,21 +44,14 @@ const domListener = (() => {
     }
   }
 
-  function clearDom() {
-    document.getElementById('todo-title').value = '';
-    document.getElementById('todo-desc').value = '';
-    document.getElementById('todo-date').value = '';
-    document.getElementById('project-name').value = '';
-  }
-
   function listentForNewProject() {
     const formProject = document.getElementById('form-project');
     formProject.addEventListener('submit', (p) => {
       p.preventDefault();
       const name = document.getElementById('project-name').value;
       action.createProject(name);
-      displayer.displayAllProjects();
-      clearDom();
+      displayer.displayAllProjects(todoList);
+      utils.clearProjectForm();
     });
   }
 
@@ -70,8 +64,8 @@ const domListener = (() => {
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
       action.updateTodo(todo, title, date, desc);
-      displayer.displayAllTodos();
-      clearDom();
+      displayer.displayAllTodos(todoList);
+      utils.clearTodoForm();
     });
   };
 

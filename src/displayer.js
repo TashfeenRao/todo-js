@@ -21,7 +21,7 @@ const displayer = (() => {
         <strong id="date">${todo.date}</strong>`;
       listContainer.appendChild(li);
     }
-    displaySingleTodo();
+    displaySingleTodo(todoList);
   };
 
   const displaySingleTodo = (todoList) => {
