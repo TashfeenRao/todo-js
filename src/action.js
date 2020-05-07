@@ -18,7 +18,6 @@ const action = (() => {
     todoList.todos[realId].title = title;
     todoList.todos[realId].date = date;
     todoList.todos[realId].desc = desc;
-    console.log(todoList);
   };
 
   const displayStatus = (todo) => {

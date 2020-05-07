@@ -71,7 +71,7 @@ form .form-input {
   border: 1px solid white;
 }
 
-.form-input #saver {
+.form-input #saver, #editbtn {
   background-color: rgb(26, 25, 25);
   border: 1px solid white;
   border-radius: 5px;

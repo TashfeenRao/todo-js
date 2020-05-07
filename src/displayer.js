@@ -69,7 +69,10 @@ const displayer = (() => {
   }
 
   return {
-    displayAllTodos, displaySingleTodo, displayAllProjects, displayProjectDropDown,
+    displayAllTodos,
+    displaySingleTodo,
+    displayAllProjects,
+    displayProjectDropDown,
   };
 })();
 

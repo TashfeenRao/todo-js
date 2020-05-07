@@ -53,7 +53,7 @@ const domListener = (() => {
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
-      action.updateTodo(id, title, date, desc);
+      action.updateTodo(id, title, date, desc, todoList.projects[project]);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
     });
