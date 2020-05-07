@@ -7,7 +7,7 @@ const formRenderer = (() => {
   const renderNewTodo = () => {
     const todoFormContainer = document.getElementById('form-todo');
     todoFormContainer.innerHTML = '';
-    todoFormContainer.innerHTML = `         <form id="form-todo">
+    todoFormContainer.innerHTML = `         <form id="new-todo-form">
         <h4> NEW TODO</h4>
         <div class="form-input">
           <label for="todo-title">Title</label>
@@ -40,6 +40,7 @@ const formRenderer = (() => {
         </div>
       </form>`;
     displayer.displayProjectDropDown(todoList);
+    domListener.hadleNewTodo();
   };
 
   const renderEditTodo = (todo) => {
@@ -47,9 +48,10 @@ const formRenderer = (() => {
     editBtn.addEventListener('click', () => {
       const todoForm = document.getElementById('form-todo');
       todoForm.innerHTML = '';
-      const form = document.createElement('form');
-      form.innerHTML = `  <h4> Edit TODO</h4>
-      <div class="form-input edit-form">
+      todoForm.innerHTML = ` 
+      <form id="edit-todo-form">
+      <h4> Edit TODO</h4>
+      <div class="form-input">
         <label for="todo-title">Title</label>
         <input type="text" id="todo-title" value="${todo.title}" required />
       </div>
@@ -65,13 +67,20 @@ const formRenderer = (() => {
       </div>
 
       <div class="form-input">
+      <label for="project">Select project for this todo</label>
+      <select class="project" id="project-drop" required>
+
+      </select>
+    </div>
+
+      <div class="form-input">
         <label for="completed">Completed?</label>
         <input type="checkbox" id="todo-status" />
       </div>
       <div class="form-input">
         <button id="editbtn" class="todo-btn" type="submit">Edit</button>
-      </div>`;
-      todoForm.appendChild(form);
+      </div>
+      </form>`;
       displayer.displayProjectDropDown(todoList);
       domListener.listenForEdit(todo.id);
     });

@@ -1,6 +1,8 @@
+/* eslint-disable radix */
 /* eslint-disable no-unused-vars */
 import Todo from './todo';
 import Project from './project';
+import todoList from './todoList';
 
 const action = (() => {
   const editStatus = (todo) => {
@@ -11,10 +13,12 @@ const action = (() => {
     }
   };
 
-  const updateTodo = (todo, title, date, desc) => {
-    todo.title = title;
-    todo.date = date;
-    todo.desc = desc;
+  const updateTodo = (id, title, date, desc) => {
+    const realId = parseInt(id) - 1;
+    todoList.todos[realId].title = title;
+    todoList.todos[realId].date = date;
+    todoList.todos[realId].desc = desc;
+    console.log(todoList);
   };
 
   const displayStatus = (todo) => {

@@ -17,9 +17,11 @@ const domListener = (() => {
 
   const ListentForNewTodo = () => {
     const newTbn = document.getElementById('new-todo-btn');
-    newTbn.addEventListener('click',
-      formRenderer.renderNewTodo);
-    const formTodo = document.getElementById('form-todo');
+    newTbn.addEventListener('click', formRenderer.renderNewTodo);
+  };
+
+  const hadleNewTodo = () => {
+    const formTodo = document.getElementById('new-todo-form');
     formTodo.addEventListener('submit', (n) => {
       n.preventDefault();
       const title = document.getElementById('todo-title').value;
@@ -43,15 +45,15 @@ const domListener = (() => {
     });
   }
 
-  const listenForEdit = (todo) => {
-    const form = document.querySelector('.edit-form');
+  const listenForEdit = (id) => {
+    const form = document.getElementById('edit-todo-form');
     form.addEventListener('submit', (n) => {
       n.preventDefault();
       const title = document.getElementById('todo-title').value;
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
-      action.updateTodo(todo, title, date, desc);
+      action.updateTodo(id, title, date, desc);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
     });
@@ -61,6 +63,7 @@ const domListener = (() => {
     listentForNewProject,
     listenForEdit,
     ListentForNewTodo,
+    hadleNewTodo,
   };
 })();
 
