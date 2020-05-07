@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
@@ -33,6 +34,17 @@ const domListener = (() => {
     });
   };
 
+  const listenForDisplayProjecToto = () => {
+    const projects = document.querySelectorAll('#project-item');
+    projects.forEach((data) => {
+      data.addEventListener('click', () => {
+        const str = data.getAttribute('data-id');
+        const id = parseInt(str) - 1;
+        displayer.displayTodoForProject(todoList.projects[id]);
+      });
+    });
+  };
+
   function handleNewProject() {
     const formProject = document.getElementById('form-project');
     formProject.addEventListener('submit', (p) => {
@@ -40,6 +52,7 @@ const domListener = (() => {
       const name = document.getElementById('project-name').value;
       action.createProject(name);
       displayer.displayAllProjects(todoList);
+      listenForDisplayProjecToto();
       utils.clearProjectForm();
     });
   }
@@ -64,6 +77,7 @@ const domListener = (() => {
     listenForEdit,
     ListentForNewTodo,
     hadleNewTodo,
+    listenForDisplayProjecToto,
   };
 })();
 

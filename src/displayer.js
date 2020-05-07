@@ -61,6 +61,8 @@ const displayer = (() => {
     todoList.projects.forEach(lisproject);
     function lisproject(proj) {
       const p = document.createElement('p');
+      p.id = 'project-item'
+      p.dataset.id = `${proj.id}`;
       p.innerHTML = `${proj.name}`;
       projectElement.appendChild(p);
     }
