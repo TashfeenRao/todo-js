@@ -104,6 +104,7 @@ form .form-input {
   font-size: 12px;
 }
 
+
 #todo-item h2 {
   font-size: 17px;
 }
@@ -112,12 +113,17 @@ form .form-input {
 #status,
 #date,
 .mini-data-date,
-#delete,
-#edit {
+#delete-icon,
+#edit-icon {
   background-color: white;
   color: black;
   border-radius: 5px;
   padding: 5px 5px 5px 5px;
+}
+
+.mini-details{
+  padding-bottom: 5px;
+  padding-top: 20px;
 }
 
 #status {

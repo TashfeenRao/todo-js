@@ -1,10 +1,21 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable radix */
 /* eslint-disable no-use-before-define */
-import action from './action';
 import formRenderer from './formRenderer';
 
 const displayer = (() => {
+  const displayTodoStatus = (todo) => {
+    if (todo.status === true) {
+      return `<strong id="status" style="background-color: rgb(80, 253, 103);"
+      >Completed</strong> <strong id="status" style="background-color: hsl(305, 59%, 51%);"
+      >Due date ${todo.date}</strong>`;
+    }
+    return `<strong id="status" style="background-color: rgb(245, 106, 106);"
+    >Not completed</strong
+  > <strong id="status" style="background-color: hsl(305, 59%, 51%);"
+  >Due date ${todo.date}</strong>`;
+  };
+
   const displayAllTodos = (todoList) => {
     const listContainer = document.querySelector('.list-container');
     listContainer.innerHTML = '';
@@ -17,10 +28,7 @@ const displayer = (() => {
       li.innerHTML = `
         <h2>${todo.title}</h2>
         <strong id="project-name">${todo.projects()[0].name}</strong>
-        <strong id="status" style="background-color: rgb(245, 106, 106);"
-          >${action.displayStatus(todo)}</strong
-        >
-        <strong id="date">${todo.date}</strong>`;
+       ${displayTodoStatus(todo)}`;
       listContainer.appendChild(li);
     }
     displaySingleTodo(todoList);
@@ -30,16 +38,18 @@ const displayer = (() => {
     const todoLi = document.querySelectorAll('#todo-item');
     const title = document.getElementById('single-title');
     const desc = document.getElementById('desc');
-    const date = document.querySelector('.mini-data-date');
     const status = document.getElementById('single-status');
+    const editBtn = document.getElementById('edit');
+    const deletBtn = document.getElementById('delete');
     todoLi.forEach((elem) => {
       elem.addEventListener('click', () => {
         const str = elem.getAttribute('data-id');
         const id = parseInt(str) - 1;
         title.innerHTML = todoList.todos[id].title;
         desc.innerHTML = todoList.todos[id].desc;
-        date.innerHTML = todoList.todos[id].date;
-        status.innerHTML = action.displayStatus(todoList.todos[id]);
+        status.innerHTML = displayTodoStatus(todoList.todos[id]);
+        editBtn.innerHTML = '<i class="far fa-trash-alt" id="delete-icon"></i>';
+        deletBtn.innerHTML = '<i class="far fa-edit" id="edit-icon"></i>';
         formRenderer.renderEditTodo(todoList.todos[id]);
       });
     });
@@ -68,7 +78,9 @@ const displayer = (() => {
     }
   }
 
+
   return {
+    displayTodoStatus,
     displayAllTodos,
     displaySingleTodo,
     displayAllProjects,

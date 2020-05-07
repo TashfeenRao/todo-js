@@ -21,7 +21,9 @@ class Todo {
   }
 
   projects() {
-    return todoList.projects.filter((project) => project.id === this.projectId);
+    return todoList.projects.filter(
+      (project) => project.id === this.projectId,
+    );
   }
 }
 

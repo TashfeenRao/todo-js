@@ -20,7 +20,7 @@ const formRenderer = (() => {
         </div>
     
         <div class="form-input">
-          <label for="completed">Date</label>
+          <label for="completed">Due date</label>
           <input type="date" id="todo-date" value="" required/>
         </div>
     
@@ -44,7 +44,7 @@ const formRenderer = (() => {
   };
 
   const renderEditTodo = (todo) => {
-    const editBtn = document.getElementById('edit');
+    const editBtn = document.getElementById('edit-icon');
     editBtn.addEventListener('click', () => {
       const todoForm = document.getElementById('form-todo');
       todoForm.innerHTML = '';
@@ -62,7 +62,7 @@ const formRenderer = (() => {
       </div>
 
       <div class="form-input">
-        <label for="completed">Date</label>
+        <label for="completed">Due date</label>
         <input type="date" id="todo-date" value="${todo.date}" required/>
       </div>
 
