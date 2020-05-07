@@ -66,11 +66,13 @@ const domListener = (() => {
     const form = document.getElementById('edit-todo-form');
     form.addEventListener('submit', (n) => {
       n.preventDefault();
+      const statusChekBox = document.getElementById('todo-status');
       const title = document.getElementById('todo-title').value;
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
+      const status = action.SetStatus(statusChekBox);
       const project = document.querySelector('.project').options.selectedIndex;
-      action.updateTodo(id, title, date, desc, todoList.projects[project]);
+      action.updateTodo(id, title, date, desc, todoList.projects[project], status);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
     });

@@ -5,12 +5,13 @@ import Project from './project';
 import todoList from './todoList';
 
 const action = (() => {
-  const updateTodo = (id, title, date, desc, project) => {
+  const updateTodo = (id, title, date, desc, project, status) => {
     const realId = parseInt(id) - 1;
     todoList.todos[realId].title = title;
     todoList.todos[realId].date = date;
     todoList.todos[realId].desc = desc;
     todoList.todos[realId].projectId = project.id;
+    todoList.todos[realId].status = status;
   };
 
 
