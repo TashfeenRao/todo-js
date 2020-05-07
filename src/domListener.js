@@ -28,7 +28,6 @@ const domListener = (() => {
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
       action.createTodo(title, date, desc, todoList.projects[project]);
-      console.log(todoList);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
     });

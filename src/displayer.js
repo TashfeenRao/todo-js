@@ -112,8 +112,6 @@ const displayer = (() => {
       >${p.name}</option>`;
       listproject.appendChild(option);
       displProjectCondition(todo, p, listproject);
-   ///listproject.selectedIndex = 1;
-      console.log(listproject.selectedIndex);
     }
   }
 
