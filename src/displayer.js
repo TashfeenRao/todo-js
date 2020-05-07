@@ -29,10 +29,10 @@ const displayer = (() => {
       const li = document.createElement('li');
       li.id = 'todo-item';
       li.dataset.id = `${todo.id}`;
-      li.innerHTML = `
-        <h2>${todo.title}</h2>
-        <strong id="project-name">${todo.projects()[0].name}</strong>
-       ${displayTodoStatus(todo)}`;
+      displayColorForPriority(todo, li);
+      li.innerHTML = `<h2 >${todo.title}</h2>
+      <strong id="project-name">${todo.projects()[0].name}</strong>
+     ${displayTodoStatus(todo)}`;
       listContainer.appendChild(li);
     }
     displaySingleTodo(todoList);
@@ -122,6 +122,13 @@ const displayer = (() => {
     }
   };
 
+  const displayColorForPriority = (todo, li) => {
+    if (todo.priorityHigh === true) {
+      li.style.border = '1px solid red';
+      li.style.backgroundColor = '#c5df32';
+    }
+  };
+
   return {
     displayTodoStatus,
     displayAllTodos,
@@ -130,6 +137,7 @@ const displayer = (() => {
     displayProjectDropDown,
     displayTodoForProject,
     displayProjectDropDownForEdit,
+    displayColorForPriority,
   };
 })();
 

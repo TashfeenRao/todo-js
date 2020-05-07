@@ -34,7 +34,6 @@ const domListener = (() => {
       action.createTodo(title, date, desc, todoList.projects[project], status, priority);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
-      console.log(todoList);
     });
   };
 
