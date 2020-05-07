@@ -83,7 +83,7 @@ form .form-input {
   display: flex;
   flex-direction: column;
 }
-#new-todo-btn {
+#new-todo-btn, #new-project-btn {
   background-color: #304ffe;
   margin: auto;
   max-width: 100px;
