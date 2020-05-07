@@ -9,6 +9,12 @@ class Project {
     this.name = name;
     todoList.projects.push(this);
   }
+
+  todos() {
+    return todoList.todos.filter(
+      (todo) => todo.projectId === this.id,
+    );
+  }
 }
 
 export default Project;

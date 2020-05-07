@@ -45,6 +45,9 @@ nav ul {
   min-width: 300px;
   min-height: 450px;
 }
+#headLine{
+  text-transform: uppercase;
+}
 
 .toto-form h4,
 .project-form h4,

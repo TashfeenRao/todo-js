@@ -14,7 +14,6 @@ const domListener = (() => {
     newProjectBtn.addEventListener('click', formRenderer.renderNewPorjectForm);
   };
 
-
   const ListentForNewTodo = () => {
     const newTbn = document.getElementById('new-todo-btn');
     newTbn.addEventListener('click', formRenderer.renderNewTodo);
@@ -35,12 +34,15 @@ const domListener = (() => {
   };
 
   const listenForDisplayProjecToto = () => {
+    const headLine = document.getElementById('headLine');
     const projects = document.querySelectorAll('#project-item');
     projects.forEach((data) => {
       data.addEventListener('click', () => {
         const str = data.getAttribute('data-id');
         const id = parseInt(str) - 1;
-        displayer.displayTodoForProject(todoList.projects[id]);
+        console.log(todoList.projects[id].todos());
+        displayer.displayTodoForProject(todoList.projects[id].todos());
+        headLine.innerHTML = `ALL TODOS FOR ${todoList.projects[id].name}`;
       });
     });
   };

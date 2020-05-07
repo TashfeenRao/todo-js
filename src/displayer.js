@@ -2,6 +2,7 @@
 /* eslint-disable radix */
 /* eslint-disable no-use-before-define */
 import formRenderer from './formRenderer';
+import todoList from './todoList';
 
 const displayer = (() => {
   const displayTodoStatus = (todo) => {
@@ -23,6 +24,23 @@ const displayer = (() => {
     const li = document.createElement('li');
     li.id = 'todo-item';
     todo.forEach(fetch);
+    function fetch(todo) {
+      li.dataset.id = `${todo.id}`;
+      li.innerHTML = `
+        <h2>${todo.title}</h2>
+        <strong id="project-name">${todo.projects()[0].name}</strong>
+       ${displayTodoStatus(todo)}`;
+      listContainer.appendChild(li);
+    }
+    displaySingleTodo(todoList);
+  };
+
+  const displayTodoForProject = (todos) => {
+    const listContainer = document.querySelector('.list-container');
+    listContainer.innerHTML = '';
+    const li = document.createElement('li');
+    li.id = 'todo-item';
+    todos.forEach(fetch);
     function fetch(todo) {
       li.dataset.id = `${todo.id}`;
       li.innerHTML = `
@@ -61,7 +79,7 @@ const displayer = (() => {
     todoList.projects.forEach(lisproject);
     function lisproject(proj) {
       const p = document.createElement('p');
-      p.id = 'project-item'
+      p.id = 'project-item';
       p.dataset.id = `${proj.id}`;
       p.innerHTML = `${proj.name}`;
       projectElement.appendChild(p);
@@ -80,13 +98,13 @@ const displayer = (() => {
     }
   }
 
-
   return {
     displayTodoStatus,
     displayAllTodos,
     displaySingleTodo,
     displayAllProjects,
     displayProjectDropDown,
+    displayTodoForProject,
   };
 })();
 
