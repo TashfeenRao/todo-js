@@ -7,7 +7,7 @@ const formRenderer = (() => {
   const renderNewTodo = () => {
     const todoFormContainer = document.getElementById('form-todo');
     todoFormContainer.innerHTML = '';
-    todoFormContainer.innerHTML = `         <form id="new-todo-form">
+    todoFormContainer.innerHTML = ` <form id="new-todo-form">
         <h4> NEW TODO</h4>
         <div class="form-input">
           <label for="todo-title">Title</label>
@@ -32,9 +32,19 @@ const formRenderer = (() => {
         </div>
     
         <div class="form-input">
+        <div class="chek-complete">
           <label for="completed">Completed?</label>
           <input type="checkbox" id="todo-status" />
         </div>
+
+        <div class="form-priority">
+            <label for="priority">Priority high</label>
+            <input type="checkbox" id="todo-priority" />
+        </div>
+        </div>
+
+      
+
         <div class="form-input">
           <button id="saver" class="todo-btn" type="submit">Save</button>
         </div>
@@ -62,7 +72,7 @@ const formRenderer = (() => {
       </div>
 
       <div class="form-input">
-        <label for="completed">Due date</label>
+        <label for="Du-date">Due date</label>
         <input type="date" id="todo-date" value="${todo.date}" required/>
       </div>
 
@@ -73,10 +83,19 @@ const formRenderer = (() => {
       </select>
     </div>
 
-      <div class="form-input">
-        <label for="completed">Completed?</label>
-        <input type="checkbox" id="todo-status" />
-      </div>
+    <div class="form-input chec-boxlist">
+    <div class="chek-complete">
+      <label for="completed">Completed?</label>
+      <input type="checkbox" id="todo-status" />
+    </div>
+
+    <div class="form-priority">
+        <label for="priority">Priority high?</label>
+        <input type="checkbox" id="todo-priority" />
+    </div>
+    </div>
+
+
       <div class="form-input">
         <button id="editbtn" class="todo-btn" type="submit">Edit</button>
       </div>

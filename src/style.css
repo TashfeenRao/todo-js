@@ -161,3 +161,9 @@ form .form-input {
   font-size: 12px;
   cursor: pointer;
 }
+.chec-boxlist {
+  display: flex;
+}
+select {
+  color: white;
+}
