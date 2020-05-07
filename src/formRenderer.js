@@ -100,6 +100,7 @@ const formRenderer = (() => {
       </form>`;
       displayer.displayProjectDropDownForEdit(todo, todoList);
       displayer.displayStatusForEdit(todo);
+      displayer.displayPriorityForEdit(todo);
       domListener.listenForEdit(todo.id);
     });
   };

@@ -136,6 +136,13 @@ const displayer = (() => {
     } else CheckboxStatus.checked = false;
   };
 
+  const displayPriorityForEdit = (todo) => {
+    const CheckboxStatus = document.getElementById('todo-priority');
+    if (todo.priorityHigh === true) {
+      CheckboxStatus.checked = true;
+    } else CheckboxStatus.checked = false;
+  };
+
   return {
     displayTodoStatus,
     displayAllTodos,
@@ -146,6 +153,7 @@ const displayer = (() => {
     displayProjectDropDownForEdit,
     displayColorForPriority,
     displayStatusForEdit,
+    displayPriorityForEdit,
   };
 })();
 
