@@ -9,6 +9,7 @@ class Todo {
     this.title = title;
     this.date = date;
     this.desc = desc;
+    this.priorityHigh = false;
     this.status = false;
     if (project) {
       this.setProject(project);
