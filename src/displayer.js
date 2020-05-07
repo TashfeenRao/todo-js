@@ -6,8 +6,8 @@ import formRenderer from './formRenderer';
 
 const displayer = (() => {
   const displayAllTodos = (todoList) => {
-    let listContainer = document.querySelector('.list-container');
-    listContainer = '';
+    const listContainer = document.querySelector('.list-container');
+    listContainer.innerHTML = '';
     const todo = todoList.todos;
     const li = document.createElement('li');
     li.id = 'todo-item';
