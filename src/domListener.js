@@ -23,11 +23,13 @@ const domListener = (() => {
     const formTodo = document.getElementById('new-todo-form');
     formTodo.addEventListener('submit', (n) => {
       n.preventDefault();
+      const statusChekBox = document.getElementById('todo-status');
       const title = document.getElementById('todo-title').value;
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
-      action.createTodo(title, date, desc, todoList.projects[project]);
+      const status = action.SetStatus(statusChekBox);
+      action.createTodo(title, date, desc, todoList.projects[project], status);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
     });

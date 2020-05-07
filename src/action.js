@@ -14,18 +14,27 @@ const action = (() => {
   };
 
 
-  const createTodo = (title, date, desc, project) => {
+  const createTodo = (title, date, desc, project, status) => {
     const todo = new Todo(title, date, desc, project);
+    todo.status = status;
   };
 
   const createProject = (name) => {
     const project = new Project(name);
   };
+  const SetStatus = (statusChekBox) => {
+    if (statusChekBox.checked) {
+      return true;
+    }
+    return false;
+  };
+
 
   return {
     updateTodo,
     createTodo,
     createProject,
+    SetStatus,
   };
 })();
 
