@@ -1,5 +1,7 @@
 /* eslint-disable import/no-cycle */
 import domListener from './domListener';
+import todoList from './todoList';
+import displayer from './displayer';
 
 const formRenderer = (() => {
   const renderNewTodo = () => {
@@ -37,6 +39,7 @@ const formRenderer = (() => {
           <button id="saver" class="todo-btn" type="submit">Save</button>
         </div>
       </form>`;
+    displayer.displayProjectDropDown(todoList);
   };
 
   const renderEditTodo = (todo) => {
@@ -69,6 +72,7 @@ const formRenderer = (() => {
         <button id="editbtn" class="todo-btn" type="submit">Edit</button>
       </div>`;
       todoForm.appendChild(form);
+      displayer.displayProjectDropDown(todoList);
       domListener.listenForEdit(todo.id);
     });
   };

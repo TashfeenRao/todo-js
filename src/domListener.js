@@ -27,22 +27,10 @@ const domListener = (() => {
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
       action.createTodo(title, date, desc, todoList.projects[project]);
-      displayer.displayAllTodos();
+      displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
     });
   };
-
-  function displayProjectDropDown() {
-    const listproject = document.querySelector('.project');
-    listproject.innerHTML = '';
-    const proj = todoList.projects;
-    proj.forEach(getProjects);
-    function getProjects(p) {
-      const option = document.createElement('option');
-      option.innerHTML = `<option dataAtribute ="${p.id}">${p.name}</option>`;
-      listproject.appendChild(option);
-    }
-  }
 
   function listentForNewProject() {
     const formProject = document.getElementById('form-project');
@@ -71,7 +59,6 @@ const domListener = (() => {
 
   return {
     listentForNewProject,
-    displayProjectDropDown,
     listenForEdit,
     ListentForNewTodo,
   };

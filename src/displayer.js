@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable radix */
 /* eslint-disable no-use-before-define */
 import action from './action';
@@ -54,7 +55,21 @@ const displayer = (() => {
     }
   };
 
-  return { displayAllTodos, displaySingleTodo, displayAllProjects };
+  function displayProjectDropDown(todoList) {
+    const listproject = document.querySelector('.project');
+    listproject.innerHTML = '';
+    const proj = todoList.projects;
+    proj.forEach(getProjects);
+    function getProjects(p) {
+      const option = document.createElement('option');
+      option.innerHTML = `<option dataAtribute ="${p.id}">${p.name}</option>`;
+      listproject.appendChild(option);
+    }
+  }
+
+  return {
+    displayAllTodos, displaySingleTodo, displayAllProjects, displayProjectDropDown,
+  };
 })();
 
 export default displayer;
