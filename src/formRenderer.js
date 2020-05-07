@@ -38,12 +38,10 @@ const formRenderer = (() => {
         </div>
 
         <div class="form-priority">
-            <label for="priority">Priority high</label>
+            <label for="priority">Priority high?</label>
             <input type="checkbox" id="todo-priority" />
         </div>
         </div>
-
-      
 
         <div class="form-input">
           <button id="saver" class="todo-btn" type="submit">Save</button>
@@ -101,6 +99,7 @@ const formRenderer = (() => {
       </div>
       </form>`;
       displayer.displayProjectDropDownForEdit(todo, todoList);
+      displayer.displayStatusForEdit(todo);
       domListener.listenForEdit(todo.id);
     });
   };

@@ -129,6 +129,13 @@ const displayer = (() => {
     }
   };
 
+  const displayStatusForEdit = (todo) => {
+    const CheckboxStatus = document.getElementById('todo-status');
+    if (todo.status === true) {
+      CheckboxStatus.checked = true;
+    } else CheckboxStatus.checked = false;
+  };
+
   return {
     displayTodoStatus,
     displayAllTodos,
@@ -138,6 +145,7 @@ const displayer = (() => {
     displayTodoForProject,
     displayProjectDropDownForEdit,
     displayColorForPriority,
+    displayStatusForEdit,
   };
 })();
 
