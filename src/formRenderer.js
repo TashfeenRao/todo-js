@@ -100,7 +100,7 @@ const formRenderer = (() => {
         <button id="editbtn" class="todo-btn" type="submit">Edit</button>
       </div>
       </form>`;
-      displayer.displayProjectDropDown(todoList);
+      displayer.displayProjectDropDownForEdit(todo, todoList);
       domListener.listenForEdit(todo.id);
     });
   };
@@ -113,7 +113,7 @@ const formRenderer = (() => {
 
      <div class="form-input">
        <label for="todo-projec-tile">Project Name</label>
-       <input type="text" id="project-name" />
+       <input type="text" id="project-name" required />
      </div>
      <div class="form-input">
        <button id="saver" class="project-btn" type="submit">Save</button>

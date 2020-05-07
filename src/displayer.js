@@ -101,6 +101,29 @@ const displayer = (() => {
     }
   }
 
+  function displayProjectDropDownForEdit(todo, todoList) {
+    const listproject = document.querySelector('.project');
+    listproject.innerHTML = '';
+    const proj = todoList.projects;
+    proj.forEach(getProjects);
+    function getProjects(p) {
+      const option = document.createElement('option');
+      option.innerHTML = `<option dataAtribute ="${p.id}"
+      >${p.name}</option>`;
+      listproject.appendChild(option);
+      displProjectCondition(todo, p, listproject);
+   ///listproject.selectedIndex = 1;
+      console.log(listproject.selectedIndex);
+    }
+  }
+
+  const displProjectCondition = (todo, project, listproject) => {
+    if (todo.projectId === project.id) {
+      const id = parseInt(project.id) - 1;
+      listproject.selectedIndex = id;
+    }
+  };
+
   return {
     displayTodoStatus,
     displayAllTodos,
@@ -108,6 +131,7 @@ const displayer = (() => {
     displayAllProjects,
     displayProjectDropDown,
     displayTodoForProject,
+    displayProjectDropDownForEdit,
   };
 })();
 
