@@ -5,6 +5,8 @@ import formRenderer from './formRenderer';
 import todoList from './todoList';
 
 const displayer = (() => {
+  const headLine = document.getElementById('headLine');
+
   const displayTodoStatus = (todo) => {
     if (todo.status === true) {
       return `<strong id="status" style="background-color: rgb(80, 253, 103);"
@@ -18,13 +20,14 @@ const displayer = (() => {
   };
 
   const displayAllTodos = (todoList) => {
+    headLine.innerHTML = 'ALL TODOS';
     const listContainer = document.querySelector('.list-container');
     listContainer.innerHTML = '';
     const todo = todoList.todos;
-    const li = document.createElement('li');
-    li.id = 'todo-item';
     todo.forEach(fetch);
     function fetch(todo) {
+      const li = document.createElement('li');
+      li.id = 'todo-item';
       li.dataset.id = `${todo.id}`;
       li.innerHTML = `
         <h2>${todo.title}</h2>
@@ -38,10 +41,10 @@ const displayer = (() => {
   const displayTodoForProject = (todos) => {
     const listContainer = document.querySelector('.list-container');
     listContainer.innerHTML = '';
-    const li = document.createElement('li');
-    li.id = 'todo-item';
     todos.forEach(fetch);
     function fetch(todo) {
+      const li = document.createElement('li');
+      li.id = 'todo-item';
       li.dataset.id = `${todo.id}`;
       li.innerHTML = `
         <h2>${todo.title}</h2>

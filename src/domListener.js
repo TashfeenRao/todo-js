@@ -28,6 +28,7 @@ const domListener = (() => {
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
       action.createTodo(title, date, desc, todoList.projects[project]);
+      console.log(todoList);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
     });
@@ -40,7 +41,6 @@ const domListener = (() => {
       data.addEventListener('click', () => {
         const str = data.getAttribute('data-id');
         const id = parseInt(str) - 1;
-        console.log(todoList.projects[id].todos());
         displayer.displayTodoForProject(todoList.projects[id].todos());
         headLine.innerHTML = `ALL TODOS FOR ${todoList.projects[id].name}`;
       });
