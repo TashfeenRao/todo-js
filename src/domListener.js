@@ -24,14 +24,17 @@ const domListener = (() => {
     formTodo.addEventListener('submit', (n) => {
       n.preventDefault();
       const statusChekBox = document.getElementById('todo-status');
+      const priorityChekBox = document.getElementById('todo-priority');
       const title = document.getElementById('todo-title').value;
       const desc = document.getElementById('todo-desc').value;
       const date = document.getElementById('todo-date').value;
       const project = document.querySelector('.project').options.selectedIndex;
       const status = action.SetStatus(statusChekBox);
-      action.createTodo(title, date, desc, todoList.projects[project], status);
+      const priority = action.SetStatus(priorityChekBox);
+      action.createTodo(title, date, desc, todoList.projects[project], status, priority);
       displayer.displayAllTodos(todoList);
       utils.clearTodoForm();
+      console.log(todoList);
     });
   };
 

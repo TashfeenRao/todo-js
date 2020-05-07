@@ -14,9 +14,10 @@ const action = (() => {
   };
 
 
-  const createTodo = (title, date, desc, project, status) => {
+  const createTodo = (title, date, desc, project, status, priority) => {
     const todo = new Todo(title, date, desc, project);
     todo.status = status;
+    todo.priorityHigh = priority;
   };
 
   const createProject = (name) => {
