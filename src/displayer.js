@@ -3,6 +3,7 @@
 /* eslint-disable no-use-before-define */
 import formRenderer from './formRenderer';
 import todoList from './todoList';
+import domListener from './domListener';
 
 const displayer = (() => {
   const headLine = document.getElementById('headLine');
@@ -72,6 +73,7 @@ const displayer = (() => {
         editBtn.innerHTML = '<i class="far fa-trash-alt" id="delete-icon"></i>';
         deletBtn.innerHTML = '<i class="far fa-edit" id="edit-icon"></i>';
         formRenderer.renderEditTodo(todoList.todos[id]);
+        domListener.listenForDelete(todoList.todos[id]);
       });
     });
   };

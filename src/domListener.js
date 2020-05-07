@@ -80,6 +80,13 @@ const domListener = (() => {
     });
   };
 
+  const listenForDelete = (todo) => {
+    const deletBtn = document.getElementById('delete-icon');
+    deletBtn.onclick = () => {
+      action.deleteTodo(todo);
+      utils.clearTodoDom();
+    };
+  };
   return {
     listentForNewProject,
     handleNewProject,
@@ -87,6 +94,7 @@ const domListener = (() => {
     ListentForNewTodo,
     hadleNewTodo,
     listenForDisplayProjecToto,
+    listenForDelete,
   };
 })();
 

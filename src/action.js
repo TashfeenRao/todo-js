@@ -22,6 +22,11 @@ const action = (() => {
     todo.priorityHigh = priority;
   };
 
+  const deleteTodo = (todo) => {
+    const realId = parseInt(todo.id) - 1;
+    delete todoList.todos[realId];
+  };
+
   const createProject = (name) => {
     const project = new Project(name);
   };
@@ -38,6 +43,7 @@ const action = (() => {
     createTodo,
     createProject,
     SetStatus,
+    deleteTodo,
   };
 })();
 
