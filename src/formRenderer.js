@@ -86,11 +86,24 @@ const formRenderer = (() => {
     });
   };
 
-  const renderPorject = ()=>{
-    
-  }
+  const renderNewPorjectForm = () => {
+    const formContainer = document.getElementById('form-todo');
+    formContainer.innerHTML = '';
+    formContainer.innerHTML = `<form id="form-project">
+     <h4>NEW PROJECT</h4>
 
-  return { renderNewTodo, renderEditTodo };
+     <div class="form-input">
+       <label for="todo-projec-tile">Project Name</label>
+       <input type="text" id="project-name" />
+     </div>
+     <div class="form-input">
+       <button id="saver" class="project-btn" type="submit">Save</button>
+     </div>
+   </form>`;
+    domListener.handleNewProject();
+  };
+
+  return { renderNewTodo, renderEditTodo, renderNewPorjectForm };
 })();
 
 export default formRenderer;

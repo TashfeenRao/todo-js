@@ -13,11 +13,13 @@ const action = (() => {
     }
   };
 
-  const updateTodo = (id, title, date, desc) => {
+  const updateTodo = (id, title, date, desc, project) => {
     const realId = parseInt(id) - 1;
     todoList.todos[realId].title = title;
     todoList.todos[realId].date = date;
     todoList.todos[realId].desc = desc;
+    console.log(project.id);
+    todoList.todos[realId].projectId = project.id;
   };
 
   const displayStatus = (todo) => {

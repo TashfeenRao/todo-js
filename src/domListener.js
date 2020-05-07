@@ -8,10 +8,9 @@ import displayer from './displayer';
 import utils from './utils';
 
 const domListener = (() => {
-  const listenForListProject = () => {
-    const listproject = document.getElementById('project-drop');
-    console.log(listproject);
-    listproject.addEventListener('click', console.log(listproject));
+  const listentForNewProject = () => {
+    const newProjectBtn = document.getElementById('new-project-btn');
+    newProjectBtn.addEventListener('click', formRenderer.renderNewPorjectForm);
   };
 
 
@@ -34,7 +33,7 @@ const domListener = (() => {
     });
   };
 
-  function listentForNewProject() {
+  function handleNewProject() {
     const formProject = document.getElementById('form-project');
     formProject.addEventListener('submit', (p) => {
       p.preventDefault();
@@ -61,6 +60,7 @@ const domListener = (() => {
 
   return {
     listentForNewProject,
+    handleNewProject,
     listenForEdit,
     ListentForNewTodo,
     hadleNewTodo,
