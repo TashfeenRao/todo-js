@@ -22,7 +22,6 @@ const action = (() => {
     const todo = new Todo(title, date, desc, project);
     todo.status = status;
     todo.priorityHigh = priority;
-    console.log(localStorage);
   };
 
   const deleteTodo = (todo) => {

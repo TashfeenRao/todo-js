@@ -31,8 +31,8 @@ const domListener = (() => {
       const project = document.querySelector('.project').options.selectedIndex;
       const status = action.SetStatus(statusChekBox);
       const priority = action.SetStatus(priorityChekBox);
-      action.createTodo(title, date, desc, todoList.projects[project], status, priority);
-      displayer.displayAllTodos(todoList);
+      action.createTodo(title, date, desc, DataStorage.projectList.projects[project], status, priority);
+      displayer.displayAllTodos(DataStorage.todoList);
       utils.clearTodoForm();
     });
   };
