@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 import Todo from './todo';
 import Project from './project';
-import todoList from './todoList';
 import DataStorage from './DataStorage';
 
 const action = (() => {
