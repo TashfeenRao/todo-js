@@ -20,7 +20,7 @@ const DataStorage = (() => {
   };
 
   const saveProjectlist = (projectList) => {
-    sessionStorage.setItem('projectList', JSON.stringify(projectList));
+    localStorage.setItem('projectList', JSON.stringify(projectList));
   };
 
   const getProjectList = () => {

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable radix */
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-use-before-define */
@@ -74,8 +75,8 @@ const domListener = (() => {
       const status = action.SetStatus(statusChekBox);
       const priority = action.SetStatus(priorityChekBox);
       const project = document.querySelector('.project').options.selectedIndex;
-      action.updateTodo(id, title, date, desc, todoList.projects[project], status, priority);
-      displayer.displayAllTodos(todoList);
+      action.updateTodo(id, title, date, desc, DataStorage.projectList.projects[project], status, priority);
+      displayer.displayAllTodos(DataStorage.todoList);
       utils.clearTodoForm();
     });
   };

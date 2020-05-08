@@ -98,7 +98,7 @@ const formRenderer = (() => {
         <button id="editbtn" class="todo-btn" type="submit">Edit</button>
       </div>
       </form>`;
-      displayer.displayProjectDropDownForEdit(todo, todoList);
+      displayer.displayProjectDropDownForEdit(todo, DataStorage.projectList);
       displayer.displayStatusForEdit(todo);
       displayer.displayPriorityForEdit(todo);
       domListener.listenForEdit(todo.id);
