@@ -2,7 +2,7 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
-import todoList from './todoList';
+import DataStorage from './DataStorage';
 import action from './action';
 import formRenderer from './formRenderer';
 import displayer from './displayer';
@@ -56,7 +56,7 @@ const domListener = (() => {
       p.preventDefault();
       const name = document.getElementById('project-name').value;
       action.createProject(name);
-      displayer.displayAllProjects(todoList);
+      displayer.displayAllProjects(DataStorage.projectList);
       listenForDisplayProjecToto();
       utils.clearProjectForm();
     });

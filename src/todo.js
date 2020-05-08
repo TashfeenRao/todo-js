@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-import todoList from './todoList';
+import DataStorage from './DataStorage';
 
 let todoId = 0;
 
@@ -14,7 +14,7 @@ class Todo {
     if (project) {
       this.setProject(project);
     }
-    todoList.todos.push(this);
+    DataStorage.todoList.todos.push(this);
   }
 
   setProject(project) {
@@ -22,7 +22,7 @@ class Todo {
   }
 
   projects() {
-    return todoList.projects.filter(
+    return DataStorage.projectList.projects.filter(
       (project) => project.id === this.projectId,
     );
   }

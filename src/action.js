@@ -3,6 +3,7 @@
 import Todo from './todo';
 import Project from './project';
 import todoList from './todoList';
+import DataStorage from './DataStorage';
 
 const action = (() => {
   const updateTodo = (id, title, date, desc, project, status, priority) => {
@@ -13,6 +14,7 @@ const action = (() => {
     todoList.todos[realId].projectId = project.id;
     todoList.todos[realId].status = status;
     todoList.todos[realId].priorityHigh = priority;
+    console.log(localStorage);
   };
 
 
@@ -20,15 +22,18 @@ const action = (() => {
     const todo = new Todo(title, date, desc, project);
     todo.status = status;
     todo.priorityHigh = priority;
+    console.log(localStorage);
   };
 
   const deleteTodo = (todo) => {
     const realId = parseInt(todo.id) - 1;
     delete todoList.todos[realId];
+    console.log(localStorage);
   };
 
   const createProject = (name) => {
     const project = new Project(name);
+    console.log(localStorage);
   };
   const SetStatus = (statusChekBox) => {
     if (statusChekBox.checked) {

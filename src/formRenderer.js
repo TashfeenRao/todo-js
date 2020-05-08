@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import domListener from './domListener';
-import todoList from './todoList';
+import DataStorage from './DataStorage';
 import displayer from './displayer';
 
 const formRenderer = (() => {
@@ -47,7 +47,7 @@ const formRenderer = (() => {
           <button id="saver" class="todo-btn" type="submit">Save</button>
         </div>
       </form>`;
-    displayer.displayProjectDropDown(todoList);
+    displayer.displayProjectDropDown(DataStorage.projectList);
     domListener.hadleNewTodo();
   };
 

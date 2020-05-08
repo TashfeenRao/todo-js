@@ -2,7 +2,7 @@
 /* eslint-disable radix */
 /* eslint-disable no-use-before-define */
 import formRenderer from './formRenderer';
-import todoList from './todoList';
+import DataStorage from './DataStorage';
 import domListener from './domListener';
 
 const displayer = (() => {
@@ -78,10 +78,10 @@ const displayer = (() => {
     });
   };
 
-  const displayAllProjects = (todoList) => {
+  const displayAllProjects = (projectList) => {
     const projectElement = document.querySelector('.projects-container');
     projectElement.innerHTML = '';
-    todoList.projects.forEach(lisproject);
+    projectList.projects.forEach(lisproject);
     function lisproject(proj) {
       const p = document.createElement('p');
       p.id = 'project-item';
