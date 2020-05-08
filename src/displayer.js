@@ -53,7 +53,7 @@ const displayer = (() => {
        ${displayTodoStatus(todo)}`;
       listContainer.appendChild(li);
     }
-    displaySingleTodo(todoList);
+    displaySingleTodo(DataStorage.todoList);
   };
 
   const displaySingleTodo = (todoList) => {

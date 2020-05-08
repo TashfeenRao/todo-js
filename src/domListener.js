@@ -44,8 +44,8 @@ const domListener = (() => {
       data.addEventListener('click', () => {
         const str = data.getAttribute('data-id');
         const id = parseInt(str) - 1;
-        displayer.displayTodoForProject(todoList.projects[id].todos());
-        headLine.innerHTML = `ALL TODOS FOR ${todoList.projects[id].name}`;
+        displayer.displayTodoForProject(DataStorage.projectList.projects[id].todos());
+        headLine.innerHTML = `ALL TODOS FOR ${DataStorage.projectList.projects[id].name}`;
       });
     });
   };
