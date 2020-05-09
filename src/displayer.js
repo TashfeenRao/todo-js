@@ -90,6 +90,7 @@ const displayer = (() => {
       p.innerHTML = `${proj.name}`;
       projectElement.appendChild(p);
     }
+    domListener.listenForDisplayProjecToto();
   };
 
   function displayProjectDropDown(todoList) {

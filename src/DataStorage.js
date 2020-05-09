@@ -5,10 +5,7 @@ const DataStorage = (() => {
   };
 
   let projectList = {
-    projects: [{ id: 1, name: 'Noukod' },
-      { id: 2, name: 'Microverse' },
-      { id: 3, name: 'Katkat Game' },
-    ],
+    projects: [],
   };
   const getTodoList = () => {
     if (sessionStorage.todoList) {
