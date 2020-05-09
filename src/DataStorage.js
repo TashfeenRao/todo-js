@@ -1,5 +1,4 @@
 /* eslint-disable prefer-const */
-
 const DataStorage = (() => {
   let todoList = {
     todos: [],
@@ -10,7 +9,7 @@ const DataStorage = (() => {
   };
   const getTodoList = () => {
     if (sessionStorage.todoList) {
-      todoList = JSON.parse(sessionStorage.getItem('todoList'));
+      DataStorage.todoList = JSON.parse(sessionStorage.getItem('todoList'));
     }
     return todoList;
   };
@@ -19,13 +18,13 @@ const DataStorage = (() => {
     sessionStorage.setItem('todoList', JSON.stringify(todoList));
   };
 
-  const saveProjectlist = (projectList) => {
+  const saveProjectlist = () => {
     localStorage.setItem('projectList', JSON.stringify(projectList));
   };
 
   const getProjectList = () => {
     if (localStorage.projectList) {
-      projectList = JSON.parse(localStorage.getItem('projectList'));
+      DataStorage.projectList = JSON.parse(localStorage.getItem('projectList'));
     }
     return projectList;
   };

@@ -32,7 +32,7 @@ const displayer = (() => {
       li.dataset.id = `${todo.id}`;
       displayColorForPriority(todo, li);
       li.innerHTML = `<h2 >${todo.title}</h2>
-      <strong id="project-name">${todo.projects()[0].name}</strong>
+      <strong id="project-name">${DataStorage.projectList.projects[todo.projectId - 1].name}</strong>
      ${displayTodoStatus(todo)}`;
       listContainer.appendChild(li);
     }
@@ -49,7 +49,7 @@ const displayer = (() => {
       li.dataset.id = `${todo.id}`;
       li.innerHTML = `
         <h2>${todo.title}</h2>
-        <strong id="project-name">${todo.projects()[0].name}</strong>
+        <strong id="project-name">${DataStorage.projectList.projects[todo.projectId - 1].name}</strong>
        ${displayTodoStatus(todo)}`;
       listContainer.appendChild(li);
     }

@@ -13,6 +13,7 @@ const action = (() => {
     DataStorage.todoList.todos[realId].projectId = project.id;
     DataStorage.todoList.todos[realId].status = status;
     DataStorage.todoList.todos[realId].priorityHigh = priority;
+    DataStorage.saveTodolist();
   };
 
 
@@ -20,15 +21,18 @@ const action = (() => {
     const todo = new Todo(title, date, desc, project);
     todo.status = status;
     todo.priorityHigh = priority;
+    DataStorage.saveTodolist();
   };
 
   const deleteTodo = (todo) => {
     const realId = parseInt(todo.id) - 1;
     delete DataStorage.todoList.todos[realId];
+    DataStorage.saveTodolist();
   };
 
   const createProject = (name) => {
     const project = new Project(name);
+    DataStorage.saveProjectlist();
   };
   const SetStatus = (statusChekBox) => {
     if (statusChekBox.checked) {
