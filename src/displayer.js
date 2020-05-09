@@ -5,7 +5,6 @@ import formRenderer from './formRenderer';
 import DataStorage from './DataStorage';
 import domListener from './domListener';
 
-
 const displayer = (() => {
   const headLine = document.getElementById('headLine');
 
