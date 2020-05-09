@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 import DataStorage from './DataStorage';
 
-let projecId = 0;
+let projecId = DataStorage.projectList.projects.length;
 
 class Project {
   constructor(name) {

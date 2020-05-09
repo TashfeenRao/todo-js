@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 import DataStorage from './DataStorage';
 
-let todoId = 0;
+let todoId = DataStorage.todoList.todos.length;
 
 class Todo {
   constructor(title, date, desc, project) {
