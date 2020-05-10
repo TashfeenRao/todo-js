@@ -8,14 +8,14 @@ const DataStorage = (() => {
     projects: [],
   };
   const getTodoList = () => {
-    if (sessionStorage.todoList) {
-      DataStorage.todoList = JSON.parse(sessionStorage.getItem('todoList'));
+    if (localStorage.todoList) {
+      DataStorage.todoList = JSON.parse(localStorage.getItem('todoList'));
     }
     return todoList;
   };
 
   const saveTodolist = () => {
-    sessionStorage.setItem('todoList', JSON.stringify(todoList));
+    localStorage.setItem('todoList', JSON.stringify(todoList));
   };
 
   const saveProjectlist = () => {
