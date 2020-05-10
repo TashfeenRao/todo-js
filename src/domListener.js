@@ -86,6 +86,7 @@ const domListener = (() => {
     deletBtn.onclick = () => {
       action.deleteTodo(todo);
       utils.clearTodoDom();
+      displayer.displayAllTodos(DataStorage.todoList);
     };
   };
   return {
