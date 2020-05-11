@@ -5,6 +5,14 @@
     <title>Awesome Todo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="./main.css" />
+    <script
+      src="https://kit.fontawesome.com/f0664007b8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -20,50 +28,44 @@
       </nav>
     </header>
 
-    <div class="container">
-      <div class="toto-form">
-        <form>
-          <div class="form-input">
-            <label for="todo-title">Title</label>
-            <input type="text" id="todo-title" />
-          </div>
-
-          <div class="form-input">
-            <label for="todo-desc">Description</label>
-            <input type="text-area" id="todo-desc" />
-          </div>
-
-          <div class="form-input">
-            <label for="completed">Date</label>
-            <input type="date" id="todo-date"/>
-          </div>
-          <div class="form-input">
-            <label for="completed">Completed?</label>
-            <input type="checkbox" id="todo-status"/>
-          </div>
-          <div class="form-input">
-          <button id="saver" type="submit">Save</button>
-          </div>
-        </form>
+    <div class="single-item-container">
+      <div class="single-item">
+        <h3 id="single-title">
+          Create todo then Click on a todo to expand it here!
+        </h3>
+        <p id="desc">
+        </p>
+        <div id="single-status"></div>
+        <div class="mini-details" >
+          <strong id="delete"></strong>
+          <strong id="edit"></strong>
+        </div>
       </div>
-      <div class="todo-list">
-        <ul class="list-container">
-            <li id="todo-item">
-                <h2>Todo title</h2>
-                <strong id="project-name">Project name</strong>
-                <strong id="status" style="background-color: rgb(245, 106, 106);">in progress</strong>
-                <strong id="date">date</strong>
-              </li>
-            <li id="todo-item">
-                <h2>Todo title</h2>
-                <strong id="project-name">Project name</strong>
-                <strong id="status">Completed</strong>
-                <strong id="date">date</strong>
-              </li>
-          </ul>
-      </div>
-      
     </div>
+    <div class="container">
+      <div class="toto-form" id="form-todo">
+
+      </div>
+
+      <div class="project-form" id="form-project">
+        <h4>ALL PROJECTS</h4>
+        <p id="new-project-btn"><i class="far fa-plus-square"></i> Add new</p>
+        <div class="projects-container">
+        </div>
+
+      </div>
+
+      <div class="todo-list">
+        <div class="todo-listhead">
+          <h4 id="headLine">ALL TODOS </h4>
+          <p id="new-todo-btn"><i class="far fa-plus-square"></i> Add new</p>
+        </div>
+        
+        <ul class="list-container">
+        </ul>
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>

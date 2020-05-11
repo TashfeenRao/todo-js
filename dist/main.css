@@ -1,6 +1,7 @@
 body {
   background-color: rgb(43, 41, 41);
   color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -12,7 +13,9 @@ header nav {
   display: flex;
   justify-content: space-around;
 }
-
+nav .logo {
+  text-transform: uppercase;
+}
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -28,20 +31,28 @@ nav ul {
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  min-height: 600px;
+  min-height: 470px;
   background-color: rgb(26, 25, 25);
 }
 
 .toto-form,
-.todo-list {
-  margin-top: 30px;
+.todo-list,
+.project-form {
   border: 1px solid rgb(82, 82, 82);
-  height: 400px;
+  height: 450px;
   margin-left: auto;
   margin-right: auto;
   min-width: 300px;
-  min-height: 400px;
-  padding-top: 20px;
+  min-height: 450px;
+}
+#headLine{
+  text-transform: uppercase;
+}
+
+.toto-form h4,
+.project-form h4,
+.todo-list h4 {
+  text-align: center;
 }
 
 form .form-input {
@@ -51,7 +62,8 @@ form .form-input {
 }
 .form-input #todo-title,
 .form-input #todo-desc,
-.form-input #todo-date {
+.form-input #todo-date,
+.form-input #project-name {
   border-radius: 5px;
   border: none;
   min-height: 30px;
@@ -62,7 +74,7 @@ form .form-input {
   border: 1px solid white;
 }
 
-.form-input #saver {
+.form-input #saver, #editbtn {
   background-color: rgb(26, 25, 25);
   border: 1px solid white;
   border-radius: 5px;
@@ -71,33 +83,90 @@ form .form-input {
 }
 
 .list-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+#new-todo-btn, #new-project-btn {
+  background-color: #304ffe;
+  margin: auto;
+  max-width: 100px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.list-container #todo-item{
-    border: 1px solid rgb(82, 82, 82);
-    list-style: none;
-    min-width: 300px;
-    margin-right: 45px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    max-height: 50px;
-    line-height: 10px;
-    font-size: 12px;
-
+.list-container #todo-item {
+  border: 1px solid rgb(82, 82, 82);
+  list-style: none;
+  min-width: 300px;
+  margin-right: 45px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  max-height: 50px;
+  line-height: 10px;
+  font-size: 12px;
 }
+
 
 #todo-item h2 {
-    font-size: 17px;
+  font-size: 17px;
 }
 
-#project-name , #status, #date{
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    padding: 5px 5px 5px 5px;
+#project-name,
+#status,
+#date,
+.mini-data-date,
+#delete-icon,
+#edit-icon {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
 }
 
-#status{
-    background-color: rgb(80, 253, 103);}
+.mini-details{
+  padding-bottom: 5px;
+  padding-top: 20px;
+}
+
+#status {
+  background-color: rgb(80, 253, 103);
+}
+
+.single-item-container {
+  background-color: rgb(26, 25, 25);
+  margin: auto;
+  justify-content: center;
+  max-width: 1200px;
+  min-height: 100px;
+}
+.single-item-container .single-item {
+  text-align: center;
+  border: 1px solid rgb(82, 82, 82);
+  padding: 0px 70px 0px 70px;
+  line-height: 10px;
+}
+
+.projects-container {
+  max-width: 300px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projects-container p {
+  background-color: #c4c10c;
+  margin-left: 5px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chec-boxlist {
+  display: flex;
+}
+select {
+  color: white;
+}
