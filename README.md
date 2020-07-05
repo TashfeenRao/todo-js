@@ -3,10 +3,10 @@
     Awesome To-Do
   <br>
 </h1>
-A simple to-do list project to store your to-do list. You can create edit and delete to-do set priority for the to-do and set their status to completed or not completed, You can group your to-do by project. You can only create a project and display a to-do that belongs to this project. To-do are saved in the browser session storage and project are stored in localStorage.
+<h4 align="center">A simple to-do list project to store your to-do list. You can create edit and delete to-do set priority for the to-do and set their status to completed or not completed, You can group your to-do by project. You can only create a project and display a to-do that belongs to this project. To-do are saved in the browser session storage and project are stored in localStorage.</h4>
 
 
-</br>
+
 ![Contributors](https://img.shields.io/badge/Contributor-Tashfeen-green)
 ![build](https://img.shields.io/badge/build-passing-green)
 ![NPM](https://img.shields.io/badge/NPM-14.01-green)
